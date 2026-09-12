@@ -1,0 +1,10 @@
+import express from 'express'
+import mongoose from "mongoose";
+import dotenv, { config } from 'dotenv'
+
+dotenv.config();
+
+export const connectToDb = async ()=>{
+    await mongoose.connect(process.env.MONGO_URI)
+    console.log('connected to db!')
+}
